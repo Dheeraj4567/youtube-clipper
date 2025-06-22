@@ -27,7 +27,8 @@
    - Click "New Project"
    - Select "Deploy from GitHub repo"
    - Choose your `youtube-clipper` repository
-   - Railway will automatically detect the backend
+   - **IMPORTANT**: Set the **Root Directory** to `backend`
+   - Railway will build using the `backend/Dockerfile`
    - Click "Deploy"
 
 3. **Configure Backend**
@@ -97,7 +98,39 @@ User Request → Vercel Frontend → Railway Backend → yt-dlp/ffmpeg → Video
 3. Railway backend uses yt-dlp and ffmpeg to process video
 4. Processed video is returned to user
 
+## 🚨 IMPORTANT: Fix Railway Root Directory
+
+**If your deployment failed, follow these steps:**
+
+1. **Go to your Railway project dashboard**
+2. **Click on "Settings" tab**
+3. **Under "Service Settings" find "Root Directory"**
+4. **Set Root Directory to: `backend`**
+5. **Under "Build" section, ensure Builder is set to: `Dockerfile`**
+6. **Click "Redeploy" or trigger a new deployment**
+
 ## 🚨 Troubleshooting
+
+### Deployment Failed During Initialization
+
+If you see "Deployment failed during the initialization process":
+
+1. **Check Root Directory Setting**
+   - Go to your Railway project settings
+   - Under "Build" section, set **Root Directory** to `backend`
+   - Redeploy the service
+
+2. **Manual Fix Steps**
+   - In Railway dashboard, go to your project
+   - Click "Settings" → "Build"
+   - Set **Root Directory**: `backend`
+   - Set **Builder**: `Dockerfile`
+   - Click "Redeploy"
+
+3. **Alternative: Delete and Recreate**
+   - Delete the current Railway service
+   - Create new project
+   - Make sure to set **Root Directory** to `backend` during setup
 
 ### Backend Issues
 - Check Railway logs for build errors

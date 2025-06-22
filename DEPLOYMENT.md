@@ -4,33 +4,48 @@
 
 YouTube clipping requires server-side processing with `yt-dlp` and `ffmpeg`. Here are your deployment options:
 
-## 🚀 Recommended: Railway (Free + Easy)
+## 🚀 Recommended: Render.com (Free + Reliable)
 
-Railway is perfect for this project because it:
-- ✅ Supports Docker containers
+Render.com is perfect for this project because it:
+- ✅ Supports Docker containers perfectly
 - ✅ Can install system dependencies (yt-dlp, ffmpeg)
-- ✅ Has a free tier ($5 credit/month)
-- ✅ One-click deployment from GitHub
-- ✅ Automatic HTTPS and custom domains
-- ✅ Great developer experience
+- ✅ Has a generous free tier (750 hours/month)
+- ✅ Easy CLI deployment
+- ✅ More reliable than Railway for Docker
+- ✅ Better documentation and support
 
-### Deploy to Railway:
+### Quick CLI Deployment:
 
-1. **Push your code to GitHub**
+```bash
+# Install CLIs
+npm install -g @render/cli vercel
 
-2. **Deploy Backend to Railway:**
-   - Go to [railway.app](https://railway.app)
+# Login to both services
+render auth login
+vercel login
+
+# Run our deployment script
+./deploy-render.sh
+```
+
+📖 **See [RENDER-DEPLOYMENT.md](RENDER-DEPLOYMENT.md) for detailed CLI instructions**
+
+### Manual Deployment:
+
+1. **Deploy Backend to Render:**
+   - Go to [render.com](https://render.com)
    - Sign up with GitHub
-   - Click "New Project" → "Deploy from GitHub repo"
-   - Select your repository
-   - Railway will auto-detect the backend and deploy it
-   - Your backend will be available at `https://your-app.railway.app`
+   - Click "New +" → "Web Service"
+   - Connect your GitHub repository
+   - Set **Root Directory:** `backend`
+   - Set **Environment:** `Docker`
+   - Deploy on **Free** plan
 
-3. **Deploy Frontend to Vercel:**
+2. **Deploy Frontend to Vercel:**
    - Go to [vercel.com](https://vercel.com)
    - Import your repository
    - Set **Root Directory:** `frontend`
-   - Add environment variable: `NEXT_PUBLIC_BACKEND_URL=https://your-app.railway.app`
+   - Add environment variable: `NEXT_PUBLIC_BACKEND_URL=https://your-render-app.onrender.com`
 
 ## 🌐 Alternative: Full Stack on Railway (One Service)
 
@@ -139,18 +154,17 @@ Perfect for:
 ## 🎯 Recommendation
 
 **For a free, fully functional deployment:**
-1. **Backend:** Deploy to Railway.app (free tier)
+1. **Backend:** Deploy to Render.com (free 750 hours/month)
 2. **Frontend:** Deploy to Vercel (free tier) 
-3. **Total cost:** $0/month (Railway gives $5 free credit)
+3. **Total cost:** $0/month
 4. **Setup time:** ~10 minutes
 
 This gives you a professional deployment that actually works for video processing!
 
 ## 🔗 Next Steps
 
-1. Create Railway account
+1. Create Render and Vercel accounts
 2. Push code to GitHub
-3. Deploy backend to Railway
-4. Update frontend environment variables
-5. Deploy frontend to Vercel
-6. Share your working YouTube clipper! 🎉
+3. Run `./deploy-render.sh` for automated deployment
+4. Configure environment variables
+5. Share your working YouTube clipper! 🎉
