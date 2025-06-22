@@ -47,7 +47,7 @@ export default function Editor() {
       // If successful, handle the file download
       // Note: This won't work in the Vercel version, but shows the intended flow
       
-    } catch (err) {
+    } catch {
       setError("Network error occurred");
     } finally {
       setLoading(false);
