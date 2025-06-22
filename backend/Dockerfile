@@ -28,4 +28,4 @@ RUN mkdir -p uploads
 EXPOSE $PORT
 
 # Start the application
-CMD ["npm", "start"]
+CMD ["npx", "ts-node", "src/index.ts"]
