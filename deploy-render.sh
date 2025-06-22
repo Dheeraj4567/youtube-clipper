@@ -5,7 +5,8 @@ echo "🎨 Deploying YouTube Clipper to Render + Vercel..."
 # Check if Render CLI is installed
 if ! command -v render &> /dev/null; then
     echo "Installing Render CLI..."
-    npm install -g @render/cli
+    curl -fsSL https://cli-releases.render.com/install.sh | sh
+    export PATH="$HOME/.render:$PATH"
 fi
 
 # Check if Vercel CLI is installed

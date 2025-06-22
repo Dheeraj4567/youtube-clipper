@@ -5,11 +5,20 @@
 ### Step 1: Install Render CLI
 
 ```bash
-# Install Render CLI
-npm install -g @render/cli
-
-# Or using curl
+# Install Render CLI (correct method)
 curl https://render.com/install-cli | sh
+
+# Add to PATH
+export PATH="$HOME/.render:$PATH"
+
+# Verify installation
+render --version
+```
+
+Or download directly:
+```bash
+# For Linux/macOS
+curl -fsSL https://cli-releases.render.com/install.sh | sh
 ```
 
 ### Step 2: Login to Render

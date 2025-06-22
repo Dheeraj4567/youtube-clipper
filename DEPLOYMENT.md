@@ -18,7 +18,8 @@ Render.com is perfect for this project because it:
 
 ```bash
 # Install CLIs
-npm install -g @render/cli vercel
+curl -fsSL https://cli-releases.render.com/install.sh | sh
+npm install -g vercel
 
 # Login to both services
 render auth login
