@@ -145,6 +145,23 @@ youtube-clipper/
 
 ---
 
+## 🚀 Deployment Options
+
+### Option 1: Free Cloud Deployment (Railway + Vercel)
+- **Backend**: Deploy to Railway.app (free $5 credit/month)
+- **Frontend**: Deploy to Vercel (free tier)
+- **Total Cost**: $0/month for most users
+- **Setup Time**: ~10 minutes
+
+📖 **See [RAILWAY-DEPLOYMENT.md](RAILWAY-DEPLOYMENT.md) for step-by-step instructions**
+
+### Option 2: Local Development (Full Control)
+- Install dependencies locally
+- Run both backend and frontend
+- Perfect for development and heavy usage
+
+---
+
 **Enjoy clipping YouTube videos!**
 
 If you have any issues, please open an issue or PR.

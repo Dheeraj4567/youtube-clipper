@@ -1,7 +1,10 @@
 {
+  "name": "youtube-clipper-backend",
+  "version": "1.0.0",
   "scripts": {
     "dev": "bun run src/index.ts",
-    "build": "bun build src/index.ts --target=bun"
+    "start": "node dist/index.js",
+    "build": "bun build src/index.ts --target=node --outdir=dist"
   },
   "dependencies": {
     "cors": "^2.8.5",
